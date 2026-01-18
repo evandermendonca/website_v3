@@ -1,4 +1,3 @@
-// src/app/page.tsx
 import Link from "next/link";
 
 function Pill({ children }: { children: React.ReactNode }) {
@@ -53,7 +52,9 @@ function Card({
   return (
     <div className="rounded-2xl border border-neutral-200 bg-white p-6">
       <div className="text-sm font-semibold text-neutral-900">{title}</div>
-      <p className="mt-2 text-sm leading-relaxed text-neutral-700">{children}</p>
+      <p className="mt-2 text-sm leading-relaxed text-neutral-700">
+        {children}
+      </p>
     </div>
   );
 }
@@ -69,13 +70,14 @@ export default function HomePage() {
           <Pill>Execution</Pill>
         </div>
 
-        <h1 className="serif mt-7 text-4xl font-semibold tracking-tight text-neutral-900 sm:text-5xl">
+        <h1 className="mt-7 text-4xl font-medium leading-[1.1] tracking-tight text-neutral-900 sm:text-[3.25rem]">
           I lead engineering teams responsible for revenue-critical systems.
         </h1>
 
         <p className="mt-5 text-lg leading-relaxed text-neutral-700">
           I focus on reliability, accountability, and delivery. Clear ownership,
-          predictable execution, and pragmatic systems that don’t collapse under load.
+          predictable execution, and pragmatic systems that don’t collapse under
+          load.
         </p>
 
         <div className="mt-8 flex flex-wrap gap-3">
@@ -107,20 +109,22 @@ export default function HomePage() {
           </Card>
 
           <Card title="Execution & predictability">
-            Turning messy priorities into a plan: clear goals, measurable outcomes,
-            and fewer surprises.
+            Turning messy priorities into a plan: clear goals, measurable
+            outcomes, and fewer surprises.
           </Card>
 
           <Card title="Modernization that pays">
-            Replacing brittle legacy components with maintainable services—focused on
-            cost, performance, and operational simplicity.
+            Replacing brittle legacy components with maintainable
+            services—focused on cost, performance, and operational simplicity.
           </Card>
 
           <div className="rounded-2xl border border-neutral-200 bg-neutral-50 p-6">
-            <div className="text-sm font-semibold text-neutral-900">Currently</div>
+            <div className="text-sm font-semibold text-neutral-900">
+              Currently
+            </div>
             <p className="mt-2 text-sm leading-relaxed text-neutral-700">
-              Engineering Manager at SelectQuote, leading teams across CRM and quote
-              engine systems.
+              Engineering Manager at SelectQuote, leading teams across CRM and
+              quote engine systems.
             </p>
           </div>
         </div>
@@ -145,7 +149,9 @@ export default function HomePage() {
             className="rounded-2xl border border-neutral-200 bg-white p-6 transition hover:bg-neutral-50"
             href="/experience"
           >
-            <div className="text-sm font-semibold text-neutral-900">Experience</div>
+            <div className="text-sm font-semibold text-neutral-900">
+              Experience
+            </div>
             <div className="mt-2 text-sm text-neutral-700">
               Roles, scope, outcomes
             </div>
@@ -155,7 +161,9 @@ export default function HomePage() {
             className="rounded-2xl border border-neutral-200 bg-white p-6 transition hover:bg-neutral-50"
             href="/writing"
           >
-            <div className="text-sm font-semibold text-neutral-900">Writing</div>
+            <div className="text-sm font-semibold text-neutral-900">
+              Writing
+            </div>
             <div className="mt-2 text-sm text-neutral-700">
               Notes and essays (Substack)
             </div>
@@ -165,7 +173,9 @@ export default function HomePage() {
             className="rounded-2xl border border-neutral-200 bg-white p-6 transition hover:bg-neutral-50"
             href="/contact"
           >
-            <div className="text-sm font-semibold text-neutral-900">Contact</div>
+            <div className="text-sm font-semibold text-neutral-900">
+              Contact
+            </div>
             <div className="mt-2 text-sm text-neutral-700">Email + links</div>
           </Link>
         </div>
