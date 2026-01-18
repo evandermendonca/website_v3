@@ -75,9 +75,9 @@ export default function HomePage() {
         </h1>
 
         <p className="mt-5 text-lg leading-relaxed text-neutral-700">
-          I focus on reliability, accountability, and delivery. Clear ownership,
-          predictable execution, and pragmatic systems that don’t collapse under
-          load.
+          I’m drawn to problems where reliability matters, where ambiguity and
+          scale test leadership decisions. I focus on clear ownership and
+          predictable execution in environments that aren’t forgiving.
         </p>
 
         <div className="mt-8 flex flex-wrap gap-3">
