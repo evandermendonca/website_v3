@@ -113,19 +113,14 @@ export default function HomePage() {
           </Card>
 
           <Card title="Modernization that pays">
-            Replacing brittle legacy components with maintainable
-            services focused on cost, performance, and operational simplicity.
+            Replacing brittle legacy components with maintainable services
+            focused on cost, performance, and operational simplicity.
           </Card>
 
-          <div className="rounded-2xl border border-neutral-200 bg-neutral-50 p-6">
-            <div className="text-sm font-semibold text-neutral-900">
-              Currently
-            </div>
-            <p className="mt-2 text-sm leading-relaxed text-neutral-700">
-              Engineering Manager at SelectQuote, leading teams across CRM and
-              quote engine systems.
-            </p>
-          </div>
+          <Card title="Currently">
+            Engineering Manager at SelectQuote, leading teams across CRM and
+            quote engine systems.
+          </Card>
         </div>
       </section>
 
