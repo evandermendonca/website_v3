@@ -96,7 +96,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* PROOF / CARDS */}
       <section className="mt-14">
         <h2 className="text-sm font-semibold tracking-tight text-neutral-900">
           What I’m known for
@@ -130,7 +129,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* QUICK LINKS */}
       <section className="mt-14">
         <h2 className="text-sm font-semibold tracking-tight text-neutral-900">
           Quick links

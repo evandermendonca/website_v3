@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
 import { Inter, Source_Serif_4 } from "next/font/google";
+import { site } from "@/lib/site";
 import Link from "next/link";
 import "./globals.css";
 
@@ -8,35 +8,13 @@ const inter = Inter({
   display: "swap",
 });
 
+const { contactInfo } = site;
+
 const serif = Source_Serif_4({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-serif",
 });
-
-export type ContactInfo = {
-  email: string;
-  phone: string;
-  socials: {
-    linkedIn: string;
-  };
-};
-
-export const metadata: Metadata = {
-  title: "Evander Mendonca",
-
-  description:
-    "Engineering Manager — revenue-critical systems, reliability, execution.",
-  metadataBase: new URL("https://evander.co"),
-};
-
-export const contactInfo: ContactInfo = {
-  email: "evander.m.mendonca@gmail.com",
-  phone: "206-519-4190",
-  socials: {
-    linkedIn: "https://linkedin.com/in/evandermendonca",
-  },
-};
 
 function NavLink({
   href,
