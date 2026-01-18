@@ -1,65 +1,175 @@
-import Image from "next/image";
+// src/app/page.tsx
+import Link from "next/link";
 
-export default function Home() {
+function Pill({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+    <span className="inline-flex items-center rounded-full border border-neutral-200 bg-white px-3 py-1 text-xs font-medium text-neutral-700">
+      {children}
+    </span>
+  );
+}
+
+function ActionLink({
+  href,
+  children,
+  external,
+  variant = "primary",
+}: {
+  href: string;
+  children: React.ReactNode;
+  external?: boolean;
+  variant?: "primary" | "secondary";
+}) {
+  const base =
+    "inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-medium transition";
+  const styles =
+    variant === "primary"
+      ? "bg-neutral-900 text-white hover:bg-neutral-800"
+      : "border border-neutral-200 text-neutral-900 hover:bg-neutral-50";
+
+  const cls = `${base} ${styles}`;
+
+  if (external) {
+    return (
+      <a className={cls} href={href} target="_blank" rel="noreferrer">
+        {children}
+      </a>
+    );
+  }
+  return (
+    <Link className={cls} href={href}>
+      {children}
+    </Link>
+  );
+}
+
+function Card({
+  title,
+  children,
+}: {
+  title: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="rounded-2xl border border-neutral-200 bg-white p-6">
+      <div className="text-sm font-semibold text-neutral-900">{title}</div>
+      <p className="mt-2 text-sm leading-relaxed text-neutral-700">{children}</p>
     </div>
+  );
+}
+
+export default function HomePage() {
+  return (
+    <main className="mx-auto max-w-4xl px-6 py-14">
+      {/* HERO */}
+      <section className="max-w-3xl">
+        <div className="flex flex-wrap gap-2">
+          <Pill>Engineering Manager</Pill>
+          <Pill>Platform & Reliability</Pill>
+          <Pill>Execution</Pill>
+        </div>
+
+        <h1 className="serif mt-7 text-4xl font-semibold tracking-tight text-neutral-900 sm:text-5xl">
+          I lead engineering teams responsible for revenue-critical systems.
+        </h1>
+
+        <p className="mt-5 text-lg leading-relaxed text-neutral-700">
+          I focus on reliability, accountability, and delivery. Clear ownership,
+          predictable execution, and pragmatic systems that don’t collapse under load.
+        </p>
+
+        <div className="mt-8 flex flex-wrap gap-3">
+          <ActionLink href="/resume.pdf" variant="primary">
+            Download resume
+          </ActionLink>
+          <ActionLink href="/experience" variant="secondary">
+            View experience
+          </ActionLink>
+          <ActionLink href="/writing" variant="secondary">
+            Read writing
+          </ActionLink>
+          <ActionLink href="/contact" variant="secondary">
+            Contact
+          </ActionLink>
+        </div>
+      </section>
+
+      {/* PROOF / CARDS */}
+      <section className="mt-14">
+        <h2 className="text-sm font-semibold tracking-tight text-neutral-900">
+          What I’m known for
+        </h2>
+
+        <div className="mt-5 grid gap-4 sm:grid-cols-2">
+          <Card title="Operating at scale">
+            Owning critical services end-to-end: reliability, on-call, roadmap,
+            and cross-team coordination.
+          </Card>
+
+          <Card title="Execution & predictability">
+            Turning messy priorities into a plan: clear goals, measurable outcomes,
+            and fewer surprises.
+          </Card>
+
+          <Card title="Modernization that pays">
+            Replacing brittle legacy components with maintainable services—focused on
+            cost, performance, and operational simplicity.
+          </Card>
+
+          <div className="rounded-2xl border border-neutral-200 bg-neutral-50 p-6">
+            <div className="text-sm font-semibold text-neutral-900">Currently</div>
+            <p className="mt-2 text-sm leading-relaxed text-neutral-700">
+              Engineering Manager at SelectQuote, leading teams across CRM and quote
+              engine systems.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* QUICK LINKS */}
+      <section className="mt-14">
+        <h2 className="text-sm font-semibold tracking-tight text-neutral-900">
+          Quick links
+        </h2>
+
+        <div className="mt-5 grid gap-4 sm:grid-cols-2">
+          <a
+            className="rounded-2xl border border-neutral-200 bg-white p-6 transition hover:bg-neutral-50"
+            href="/resume.pdf"
+          >
+            <div className="text-sm font-semibold text-neutral-900">Resume</div>
+            <div className="mt-2 text-sm text-neutral-700">One-page PDF</div>
+          </a>
+
+          <Link
+            className="rounded-2xl border border-neutral-200 bg-white p-6 transition hover:bg-neutral-50"
+            href="/experience"
+          >
+            <div className="text-sm font-semibold text-neutral-900">Experience</div>
+            <div className="mt-2 text-sm text-neutral-700">
+              Roles, scope, outcomes
+            </div>
+          </Link>
+
+          <Link
+            className="rounded-2xl border border-neutral-200 bg-white p-6 transition hover:bg-neutral-50"
+            href="/writing"
+          >
+            <div className="text-sm font-semibold text-neutral-900">Writing</div>
+            <div className="mt-2 text-sm text-neutral-700">
+              Notes and essays (Substack)
+            </div>
+          </Link>
+
+          <Link
+            className="rounded-2xl border border-neutral-200 bg-white p-6 transition hover:bg-neutral-50"
+            href="/contact"
+          >
+            <div className="text-sm font-semibold text-neutral-900">Contact</div>
+            <div className="mt-2 text-sm text-neutral-700">Email + links</div>
+          </Link>
+        </div>
+      </section>
+    </main>
   );
 }
