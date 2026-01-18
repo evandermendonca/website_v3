@@ -108,7 +108,7 @@ export default function ExperiencePage() {
         <Card>
           <RoleHeader
             company="SelectQuote Insurance Services"
-            location="Remote — Kansas City, MO"
+            location="Remote — Kansas City, MO (remote)"
             title="Engineering Manager"
             dates="Apr 2022 – Present"
           />
@@ -187,7 +187,7 @@ export default function ExperiencePage() {
         <Card>
           <RoleHeader
             company="SelectQuote Insurance Services"
-            location="Remote — Kansas City, MO"
+            location="Remote — Kansas City, MO (remote)"
             title="Senior Software Engineer"
             dates="Sep 2021 – Apr 2022"
           />
