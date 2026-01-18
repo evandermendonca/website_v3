@@ -114,7 +114,7 @@ export default function HomePage() {
 
           <Card title="Modernization that pays">
             Replacing brittle legacy components with maintainable
-            services—focused on cost, performance, and operational simplicity.
+            services focused on cost, performance, and operational simplicity.
           </Card>
 
           <div className="rounded-2xl border border-neutral-200 bg-neutral-50 p-6">
