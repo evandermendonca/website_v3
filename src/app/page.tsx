@@ -62,7 +62,6 @@ function Card({
 export default function HomePage() {
   return (
     <main className="mx-auto max-w-4xl px-6 py-14">
-      {/* HERO */}
       <section className="max-w-3xl">
         <div className="flex flex-wrap gap-2">
           <Pill>Engineering Manager</Pill>

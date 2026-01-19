@@ -1,6 +1,6 @@
 import { Inter, Source_Serif_4 } from "next/font/google";
 import { site } from "@/lib/site";
-import Link from "next/link";
+import { Header } from "@/components/Header";
 import "./globals.css";
 
 const inter = Inter({
@@ -16,23 +16,6 @@ const serif = Source_Serif_4({
   variable: "--font-serif",
 });
 
-function NavLink({
-  href,
-  children,
-}: {
-  href: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <Link
-      href={href}
-      className="text-sm text-neutral-600 hover:text-neutral-900"
-    >
-      {children}
-    </Link>
-  );
-}
-
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
@@ -41,29 +24,7 @@ export default function RootLayout({
       <body
         className={`${inter.className} ${serif.variable} min-h-screen bg-white text-neutral-900 antialiased`}
       >
-        <header className="border-b border-neutral-200">
-          <div className="mx-auto flex max-w-4xl items-center justify-between px-6 py-4">
-            <div className="flex items-center gap-10">
-              <Link href="/" className="text-sm font-semibold tracking-tight">
-                Evander Mendonca
-              </Link>
-
-              <nav className="hidden items-center gap-6 sm:flex">
-                <NavLink href="/">Home</NavLink>
-                <NavLink href="/experience">Experience</NavLink>
-                <NavLink href="/writing">Writing</NavLink>
-                <NavLink href="/contact">Contact</NavLink>
-              </nav>
-            </div>
-
-            <a
-              className="hidden rounded-xl border border-neutral-200 px-3 py-1.5 text-sm font-medium text-neutral-900 hover:bg-neutral-50 sm:inline-flex"
-              href="/resume.pdf"
-            >
-              Resume
-            </a>
-          </div>
-        </header>
+        <Header />
 
         {children}
 
