@@ -42,7 +42,7 @@ const WritingPage = async () => {
               No posts loaded
             </div>
             <p className="mt-3 text-sm leading-relaxed text-neutral-700">
-              Start writing!
+              Check back soon
             </p>
           </SubstackCard>
         ) : (

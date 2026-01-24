@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { site } from "@/lib/site";
 import { removeHttp } from "@/lib/helpers/removeHttp";
 import { SectionTitle } from "@/components/SectionTitle";
@@ -21,12 +20,9 @@ const ContactPage = () => {
         <ActionLink href="/resume.pdf" variant="secondary">
           Download resume
         </ActionLink>
-        <Link
-          className="inline-flex items-center justify-center rounded-xl border border-neutral-200 px-4 py-2 text-sm font-medium text-neutral-900 transition hover:bg-neutral-50"
-          href="/experience"
-        >
+        <ActionLink href="/experience" variant="secondary">
           View experience
-        </Link>
+        </ActionLink>
       </div>
 
       <section className="mt-12 grid gap-6 sm:grid-cols-2">
@@ -54,7 +50,7 @@ const ContactPage = () => {
           </div>
 
           <div className="mt-4 text-xs text-neutral-500">
-            I try to respond within a couple days.
+            I will response as soon as possible.
           </div>
         </ContactDetailsCard>
 
@@ -66,26 +62,30 @@ const ContactPage = () => {
           <ul className="mt-4 space-y-2 text-sm leading-relaxed text-neutral-800">
             <li className="flex gap-3">
               <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-neutral-300" />
-              <span>Engineering leadership roles (EM/Senior EM).</span>
-            </li>
-            <li className="flex gap-3">
-              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-neutral-300" />
               <span>
-                Platform reliability, on-call health, and modernization work.
+                Engineering leadership roles where product or platform teams own
+                production systems end-to-end.
               </span>
             </li>
             <li className="flex gap-3">
               <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-neutral-300" />
               <span>
-                Speaking/training sessions on execution and engineering
-                management.
+                Teams dealing with reliability, on-call pain, or delivery
+                bottlenecks.
+              </span>
+            </li>
+            <li className="flex gap-3">
+              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-neutral-300" />
+              <span>
+                Replacing legacy systems when it clearly improves delivery and
+                team health.
               </span>
             </li>
           </ul>
 
           <div className="mt-4 text-sm text-neutral-700">
-            Include context and what you’re looking for. If there’s a job link,
-            send it.
+            If one of these aligns with what you’re working on, feel free to
+            reach out.
           </div>
         </ContactDetailsCard>
       </section>

@@ -27,7 +27,7 @@ export const site = {
     contact: {
       title: "Contact",
       subtitle:
-        "If you want to connect, email is the best way to reach me. I’m also available on LinkedIn.",
+        "Want to chat? Feel free to reach out using any of the methods below.",
     },
   },
 };
