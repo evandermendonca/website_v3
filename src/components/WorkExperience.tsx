@@ -76,13 +76,17 @@ export const WorkExperience = () => {
 
             {index === 0 && (
               <>
-                <Subheading>Scope</Subheading>
-                <FeaturedImpact
-                  organization={featuredImpact.org}
-                  platforms={featuredImpact.platforms}
-                  operatingModel={featuredImpact.operatingModel}
-                  businessImpact={featuredImpact.businessImpact}
-                />
+                {featuredImpact && (
+                  <>
+                    <Subheading>Scope</Subheading>
+                    <FeaturedImpact
+                      organization={featuredImpact.org}
+                      platforms={featuredImpact.platforms}
+                      operatingModel={featuredImpact.operatingModel}
+                      businessImpact={featuredImpact.businessImpact}
+                    />
+                  </>
+                )}
               </>
             )}
 
