@@ -178,13 +178,7 @@ const ExperiencePage = () => {
           </BulletList>
         </ExperienceCard>
 
-        <div className="mt-6 border border-red-500 p-4">
-          DEBUG: before WorkExperience
-        </div>
         <WorkExperience />
-        <div className="mt-6 border border-blue-500 p-4">
-          DEBUG: after WorkExperience
-        </div>
       </section>
     </main>
   );

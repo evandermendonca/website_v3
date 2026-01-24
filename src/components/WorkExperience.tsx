@@ -55,8 +55,8 @@ export const WorkExperience = () => {
           Nothing here
         </div>
       ) : (
-        workExperience.map((experience, index) => {
-          <ExperienceCard key={index}>
+        workExperience.map((experience, index) => (
+          <ExperienceCard key={`${experience.company}-${experience.startDate}`}>
             {index === 0 ? (
               <div>This is a test message</div>
             ) : (
@@ -69,18 +69,20 @@ export const WorkExperience = () => {
                 />
 
                 {experience.impact.length === 0 ? (
-                  <div>No impact bullets.</div>
+                  <div className="mt-4 text-sm text-neutral-600">
+                    No impact bullets.
+                  </div>
                 ) : (
-                  experience.impact.map((bullet) => {
-                    <BulletList>
-                      <Bullet>{bullet}</Bullet>
-                    </BulletList>;
-                  })
+                  <BulletList>
+                    {experience.impact.map((bullet) => (
+                      <Bullet key={bullet}>{bullet}</Bullet>
+                    ))}
+                  </BulletList>
                 )}
               </>
             )}
-          </ExperienceCard>;
-        })
+          </ExperienceCard>
+        ))
       )}
     </>
   );
