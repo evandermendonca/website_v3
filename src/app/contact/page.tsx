@@ -1,29 +1,9 @@
 import Link from "next/link";
 import { site } from "@/lib/site";
 import { removeHttp } from "@/lib/removeHttp";
+import { SectionTitle } from "@/components/SectionTitle";
 
 const { contactInfo } = site;
-
-function SectionTitle({
-  title,
-  subtitle,
-}: {
-  title: string;
-  subtitle?: string;
-}) {
-  return (
-    <header className="max-w-3xl">
-      <h1 className="text-3xl font-semibold tracking-tight text-neutral-900 sm:text-4xl">
-        {title}
-      </h1>
-      {subtitle ? (
-        <p className="mt-3 text-lg leading-relaxed text-neutral-700">
-          {subtitle}
-        </p>
-      ) : null}
-    </header>
-  );
-}
 
 function Card({ children }: { children: React.ReactNode }) {
   return (
