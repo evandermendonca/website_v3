@@ -1,5 +1,6 @@
 import Parser from "rss-parser";
 import { SectionTitle } from "@/components/SectionTitle";
+import { site } from "@/lib/site";
 
 type FeedItem = {
   title?: string;
@@ -49,6 +50,7 @@ async function getPosts() {
 }
 
 export default async function WritingPage() {
+  const { title, subtitle } = site.pageHeaders.writing;
   let posts: FeedItem[] = [];
   let substackUrl = "";
 
@@ -62,10 +64,7 @@ export default async function WritingPage() {
 
   return (
     <main className="mx-auto max-w-4xl px-6 py-14">
-      <SectionTitle
-        title="Writing"
-        subtitle="Writing about engineering leadership, execution, and what actually breaks when systems meet reality."
-      />
+      <SectionTitle title={title} subtitle={subtitle} />
 
       <div className="mt-10 flex flex-wrap gap-3">
         {substackUrl && (

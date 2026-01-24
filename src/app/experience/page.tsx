@@ -1,14 +1,14 @@
 import Link from "next/link";
 import { WorkExperience } from "@/components/WorkExperience";
 import { SectionTitle } from "@/components/SectionTitle";
+import { site } from "@/lib/site";
 
 const ExperiencePage = () => {
+  const { title, subtitle } = site.pageHeaders.experience;
+
   return (
     <main className="mx-auto max-w-4xl px-6 py-14">
-      <SectionTitle
-        title="Experience"
-        subtitle="Engineering leadership and hands-on delivery across revenue-critical platforms, modernization, and operational reliability."
-      />
+      <SectionTitle title={title} subtitle={subtitle} />
 
       <div className="mt-10 flex flex-wrap gap-3">
         <a

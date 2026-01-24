@@ -58,12 +58,11 @@ function Row({
 }
 
 export default function ContactPage() {
+  const { title, subtitle } = site.pageHeaders.contact;
+
   return (
     <main className="mx-auto max-w-4xl px-6 py-14">
-      <SectionTitle
-        title="Contact"
-        subtitle="If you want to connect, email is the best way to reach me. I’m also available on LinkedIn."
-      />
+      <SectionTitle title={title} subtitle={subtitle} />
 
       <div className="mt-10 flex flex-wrap gap-3">
         <ActionLink href={`mailto:${contactInfo.email}`} variant="primary">

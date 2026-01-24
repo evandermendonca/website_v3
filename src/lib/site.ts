@@ -1,20 +1,4 @@
-import { Metadata } from "next";
-
-export type Site = {
-  metadata: Metadata;
-  contactInfo: ContactInfo;
-};
-
-export type ContactInfo = {
-  email: string;
-  phone: string;
-  socials: {
-    linkedIn: string;
-    github: string;
-  };
-};
-
-export const site: Site = {
+export const site = {
   metadata: {
     title: "Evander Mendonca",
     description:
@@ -27,6 +11,23 @@ export const site: Site = {
     socials: {
       linkedIn: "https://linkedin.com/in/evandermendonca",
       github: "https://github.com/evandermendonca",
+    },
+  },
+  pageHeaders: {
+    experience: {
+      title: "Experience",
+      subtitle:
+        "Engineering leadership and hands-on delivery across revenue-critical platforms, modernization, and operational reliability.",
+    },
+    writing: {
+      title: "Writing",
+      subtitle:
+        "Writing about engineering leadership, execution, and what actually breaks when systems meet reality.",
+    },
+    contact: {
+      title: "Contact",
+      subtitle:
+        "If you want to connect, email is the best way to reach me. I’m also available on LinkedIn.",
     },
   },
 };
