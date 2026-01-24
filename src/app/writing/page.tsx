@@ -116,10 +116,7 @@ export default async function WritingPage() {
               No posts loaded
             </div>
             <p className="mt-3 text-sm leading-relaxed text-neutral-700">
-              If your Substack feed is private, missing, or blocked locally,
-              this page will show empty. Once{" "}
-              <span className="font-mono">SUBSTACK_URL</span> is set correctly,
-              posts will appear here automatically.
+              Start writing!
             </p>
           </Card>
         ) : (

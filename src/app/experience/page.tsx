@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { ExperienceCard } from "@/components/ExperienceCard";
+import { WorkExperience } from "@/components/WorkExperience";
 
 function SectionTitle({
   title,
@@ -48,14 +50,6 @@ function RoleHeader({
   );
 }
 
-function Card({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="rounded-2xl border border-neutral-200 bg-white p-6">
-      {children}
-    </div>
-  );
-}
-
 function BulletList({ children }: { children: React.ReactNode }) {
   return (
     <ul className="mt-4 space-y-2 text-sm leading-relaxed text-neutral-800">
@@ -81,7 +75,7 @@ function Subheading({ children }: { children: React.ReactNode }) {
   );
 }
 
-export default function ExperiencePage() {
+const ExperiencePage = () => {
   return (
     <main className="mx-auto max-w-4xl px-6 py-14">
       <SectionTitle
@@ -105,7 +99,7 @@ export default function ExperiencePage() {
       </div>
 
       <section className="mt-12 space-y-12">
-        <Card>
+        <ExperienceCard>
           <RoleHeader
             company="SelectQuote Insurance Services"
             location="Remote — Kansas City, MO (remote)"
@@ -182,74 +176,18 @@ export default function ExperiencePage() {
               accountable execution.
             </Bullet>
           </BulletList>
-        </Card>
+        </ExperienceCard>
 
-        <Card>
-          <RoleHeader
-            company="SelectQuote Insurance Services"
-            location="Remote — Kansas City, MO (remote)"
-            title="Senior Software Engineer"
-            dates="Sep 2021 – Apr 2022"
-          />
-
-          <Subheading>Selected impact</Subheading>
-          <BulletList>
-            <Bullet>
-              Tech led modernization replacing a legacy lead-ingestion system
-              with a Node-based service, delivering hundreds of thousands in
-              annual cost savings.
-            </Bullet>
-            <Bullet>
-              Delivered full-stack improvements across revenue-critical systems
-              supporting the Senior division.
-            </Bullet>
-            <Bullet>
-              Promoted from Software Engineer I to Senior Software Engineer
-              within six months based on impact and growth.
-            </Bullet>
-          </BulletList>
-        </Card>
-
-        <Card>
-          <RoleHeader
-            company="Allusion Software"
-            location="Wellington, FL"
-            title="Software Engineer"
-            dates="May 2021 – Sep 2021"
-          />
-
-          <BulletList>
-            <Bullet>
-              Built full-stack applications using React, Node, and Google Cloud
-              (Firebase) for custom CRM and tracking solutions.
-            </Bullet>
-            <Bullet>
-              Developed reusable components and backend services to support
-              rapid delivery across multiple client projects.
-            </Bullet>
-          </BulletList>
-        </Card>
-
-        <Card>
-          <RoleHeader
-            company="Genesis Global Technologies"
-            location="Remote — Fort Myers, FL"
-            title="Software Engineer"
-            dates="Oct 2020 – May 2021"
-          />
-
-          <BulletList>
-            <Bullet>
-              Developed backend services and REST APIs using C#, ASP.NET,
-              JavaScript, and SQL for CRM and marketing platforms.
-            </Bullet>
-            <Bullet>
-              Integrated third-party services (Twilio, Zapier) to enable
-              cross-system automation and communication.
-            </Bullet>
-          </BulletList>
-        </Card>
+        <div className="mt-6 border border-red-500 p-4">
+          DEBUG: before WorkExperience
+        </div>
+        <WorkExperience />
+        <div className="mt-6 border border-blue-500 p-4">
+          DEBUG: after WorkExperience
+        </div>
       </section>
     </main>
   );
-}
+};
+
+export default ExperiencePage;
