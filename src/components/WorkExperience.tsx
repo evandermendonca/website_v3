@@ -1,4 +1,5 @@
 import { ExperienceCard } from "./ExperienceCard";
+import { FeaturedImpact } from "./FeaturedImpact";
 import { resume } from "@/lib/resume";
 
 const RoleHeader = ({
@@ -45,8 +46,17 @@ const Bullet = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
+function Subheading({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="mt-6 text-sm font-semibold tracking-tight text-neutral-900">
+      {children}
+    </div>
+  );
+}
+
 export const WorkExperience = () => {
   const workExperience = resume.experience;
+  const featuredImpact = resume.featuredImpact;
 
   return (
     <>
@@ -57,29 +67,36 @@ export const WorkExperience = () => {
       ) : (
         workExperience.map((experience, index) => (
           <ExperienceCard key={`${experience.company}-${experience.startDate}`}>
-            {index === 0 ? (
-              <div>This is a test message</div>
-            ) : (
-              <>
-                <RoleHeader
-                  company={experience.company}
-                  location={experience.location}
-                  title={experience.title}
-                  dates={`${experience.startDate} – ${experience.endDate}`}
-                />
+            <RoleHeader
+              company={experience.company}
+              location={experience.location}
+              title={experience.title}
+              dates={`${experience.startDate} – ${experience.endDate}`}
+            />
 
-                {experience.impact.length === 0 ? (
-                  <div className="mt-4 text-sm text-neutral-600">
-                    No impact bullets.
-                  </div>
-                ) : (
-                  <BulletList>
-                    {experience.impact.map((bullet) => (
-                      <Bullet key={bullet}>{bullet}</Bullet>
-                    ))}
-                  </BulletList>
-                )}
+            {index === 0 && (
+              <>
+                <Subheading>Scope</Subheading>
+                <FeaturedImpact
+                  organization={featuredImpact.org}
+                  platforms={featuredImpact.platforms}
+                  operatingModel={featuredImpact.operatingModel}
+                  businessImpact={featuredImpact.businessImpact}
+                />
               </>
+            )}
+
+            <Subheading>Impact</Subheading>
+            {experience.impact.length === 0 ? (
+              <div className="mt-4 text-sm text-neutral-600">
+                No impact bullets.
+              </div>
+            ) : (
+              <BulletList>
+                {experience.impact.map((bullet) => (
+                  <Bullet key={bullet}>{bullet}</Bullet>
+                ))}
+              </BulletList>
             )}
           </ExperienceCard>
         ))

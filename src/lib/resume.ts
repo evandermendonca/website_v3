@@ -50,6 +50,13 @@ export const resume = {
       ],
     },
   ],
+  featuredImpact: {
+    org: "Two teams; 12+ engineers, 4 QA, 2 PMs, 2 BPOs",
+    platforms: "Senior CRM & Senior Quote Engine",
+    operatingModel:
+      "Delivery + reliability, on-call health, cross-team coordination",
+    businessImpact: "~$250M annual revenue",
+  },
   education: [
     {
       school: "Florida Atlantic Unversity",
