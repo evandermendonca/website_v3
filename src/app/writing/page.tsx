@@ -1,53 +1,9 @@
-import Parser from "rss-parser";
 import { SectionTitle } from "@/components/SectionTitle";
+import { SubstackCard } from "@/components/SubstackCard";
 import { site } from "@/lib/site";
-
-type FeedItem = {
-  title?: string;
-  link?: string;
-  pubDate?: string;
-  contentSnippet?: string;
-};
-
-function formatDate(value?: string) {
-  if (!value) return "";
-  const d = new Date(value);
-  if (Number.isNaN(d.getTime())) return "";
-  return d.toLocaleDateString(undefined, {
-    year: "numeric",
-    month: "short",
-    day: "2-digit",
-  });
-}
-
-function Card({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="rounded-2xl border border-neutral-200 bg-white p-6">
-      {children}
-    </div>
-  );
-}
-
-async function getPosts() {
-  const substackUrl = process.env.SUBSTACK_URL;
-  if (!substackUrl) {
-    return { posts: [] as FeedItem[], substackUrl: "" };
-  }
-
-  const feedUrl = `${substackUrl.replace(/\/+$/, "")}/feed`;
-
-  const parser: Parser<unknown, FeedItem> = new Parser({
-    timeout: 10_000,
-    headers: {
-      "User-Agent": "Mozilla/5.0",
-    },
-  });
-
-  const feed = await parser.parseURL(feedUrl);
-  const posts = (feed.items ?? []).slice(0, 12);
-
-  return { posts, substackUrl };
-}
+import { FeedItem } from "@/types/FeedItem";
+import { getPosts } from "@/lib/helpers/getPosts";
+import { formatDate } from "@/lib/helpers/formatDate";
 
 export default async function WritingPage() {
   const { title, subtitle } = site.pageHeaders.writing;
@@ -88,14 +44,14 @@ export default async function WritingPage() {
 
       <section className="mt-12 space-y-6">
         {posts.length === 0 ? (
-          <Card>
+          <SubstackCard>
             <div className="text-sm font-semibold tracking-tight text-neutral-900">
               No posts loaded
             </div>
             <p className="mt-3 text-sm leading-relaxed text-neutral-700">
               Start writing!
             </p>
-          </Card>
+          </SubstackCard>
         ) : (
           posts.map((p) => (
             <a

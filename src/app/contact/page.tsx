@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { site } from "@/lib/site";
-import { removeHttp } from "@/lib/removeHttp";
+import { removeHttp } from "@/lib/helpers/removeHttp";
 import { SectionTitle } from "@/components/SectionTitle";
 
 const { contactInfo } = site;
