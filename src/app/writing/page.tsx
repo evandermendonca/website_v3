@@ -1,11 +1,12 @@
 import { SectionTitle } from "@/components/SectionTitle";
 import { SubstackCard } from "@/components/SubstackCard";
+import { ActionLink } from "@/components/ActionLink";
 import { site } from "@/lib/site";
 import { FeedItem } from "@/types/FeedItem";
 import { getPosts } from "@/lib/helpers/getPosts";
 import { formatDate } from "@/lib/helpers/formatDate";
 
-export default async function WritingPage() {
+const WritingPage = async () => {
   const { title, subtitle } = site.pageHeaders.writing;
   let posts: FeedItem[] = [];
   let substackUrl = "";
@@ -24,22 +25,14 @@ export default async function WritingPage() {
 
       <div className="mt-10 flex flex-wrap gap-3">
         {substackUrl && (
-          <a
-            className="inline-flex items-center justify-center rounded-xl bg-neutral-900 px-4 py-2 text-sm font-medium text-white hover:bg-neutral-800"
-            href={substackUrl}
-            target="_blank"
-            rel="noreferrer"
-          >
+          <ActionLink href={substackUrl} variant="primary">
             View on Substack
-          </a>
+          </ActionLink>
         )}
 
-        <a
-          className="inline-flex items-center justify-center rounded-xl border border-neutral-200 px-4 py-2 text-sm font-medium text-neutral-900 hover:bg-neutral-50"
-          href="/contact"
-        >
+        <ActionLink href="/contact" variant="secondary">
           Contact
-        </a>
+        </ActionLink>
       </div>
 
       <section className="mt-12 space-y-6">
@@ -85,4 +78,6 @@ export default async function WritingPage() {
       </section>
     </main>
   );
-}
+};
+
+export default WritingPage;
