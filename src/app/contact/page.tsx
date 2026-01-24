@@ -50,7 +50,7 @@ const ContactPage = () => {
           </div>
 
           <div className="mt-4 text-xs text-neutral-500">
-            I will response as soon as possible.
+            I will respond as soon as possible.
           </div>
         </ContactDetailsCard>
 
