@@ -10,7 +10,7 @@ export function Header() {
     <header className="border-b border-neutral-200">
       <div className="mx-auto max-w-5xl px-4 py-4 flex items-center justify-between">
         <Link href="/" className="font-medium">
-          Evander Mendonca
+          Evan Mendonca
         </Link>
 
         <nav className="hidden md:flex items-center gap-6 text-sm">
