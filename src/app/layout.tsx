@@ -30,7 +30,7 @@ export default function RootLayout({
 
         <footer className="border-t border-neutral-200">
           <div className="mx-auto flex max-w-4xl items-center justify-between px-6 py-10 text-sm text-neutral-600">
-            <span>© {new Date().getFullYear()} Evander Mendonca</span>
+            <span>© {new Date().getFullYear()} Evan Mendonca</span>
             <span className="flex gap-4">
               <a className="hover:text-neutral-900" href="/resume.pdf">
                 Resume

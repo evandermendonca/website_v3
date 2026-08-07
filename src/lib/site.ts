@@ -1,6 +1,6 @@
 export const site = {
   metadata: {
-    title: "Evander Mendonca",
+    title: "Evan Mendonca",
     description:
       "Engineering Manager — revenue-critical systems, reliability, execution.",
     metadataBase: new URL("https://evander.co"),
