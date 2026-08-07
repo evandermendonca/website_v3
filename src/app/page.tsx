@@ -103,23 +103,23 @@ export default function HomePage() {
 
         <div className="mt-5 grid gap-4 sm:grid-cols-2">
           <Card title="Operating at scale">
-            Owning critical services end-to-end: reliability, on-call, roadmap,
-            and cross-team coordination.
+            Owning complex systems end to end, from roadmap and reliability to
+            on-call and cross-team coordination.
           </Card>
 
           <Card title="Execution & predictability">
-            Turning messy priorities into a plan: clear goals, measurable
-            outcomes, and fewer surprises.
+            Turning ambiguous priorities into clear plans, measurable outcomes,
+            and consistent delivery.
           </Card>
 
-          <Card title="Modernization that pays">
-            Replacing brittle legacy components with maintainable services
-            focused on cost, performance, and operational simplicity.
+          <Card title="Pragmatic modernization">
+            Replacing brittle legacy systems with simpler, more maintainable
+            services that improve reliability, performance, and cost.
           </Card>
 
-          <Card title="Currently">
-            Engineering Manager at SelectQuote, leading teams across CRM and
-            quote engine systems.
+          <Card title="Technical leadership">
+            Giving teams clear direction while staying close enough to the
+            architecture and systems to make sound engineering decisions.
           </Card>
         </div>
       </section>
