@@ -20,7 +20,7 @@ const ExperiencePage = () => {
         </ActionLink>
       </div>
 
-      <section className="mt-12 space-y-12">
+      <section className="mt-12 space-y-6">
         <WorkExperience />
       </section>
     </main>
