@@ -65,18 +65,19 @@ export default function HomePage() {
       <section className="max-w-3xl">
         <div className="flex flex-wrap gap-2">
           <Pill>Engineering Manager</Pill>
-          <Pill>Platform & Reliability</Pill>
-          <Pill>Execution</Pill>
+          <Pill>Reliable Execution</Pill>
+          <Pill>Revenue-Critical Systems</Pill>
         </div>
 
         <h1 className="mt-7 text-4xl font-medium leading-[1.1] tracking-tight text-neutral-900 sm:text-[3.25rem]">
-          I lead engineering teams responsible for revenue-critical systems.
+          I lead engineering teams responsible for complex, high-scale systems.
         </h1>
 
         <p className="mt-5 text-lg leading-relaxed text-neutral-700">
-          I’m drawn to problems where reliability matters, where ambiguity and
-          scale test leadership decisions. I focus on clear ownership and
-          predictable execution in environments that aren’t forgiving.
+          I’m drawn to challenging problems where reliability and scale matter.
+          I bring clarity to ambiguous environments and help teams consistently
+          deliver high-quality, resilient software even when requirements are
+          unclear.
         </p>
 
         <div className="mt-8 flex flex-wrap gap-3">
